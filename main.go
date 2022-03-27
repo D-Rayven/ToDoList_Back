@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-todo/server/router"
+	"go-todo/router"
 	"log"
 	"net/http"
 )
