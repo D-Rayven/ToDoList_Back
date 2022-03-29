@@ -2,16 +2,21 @@ package main
 
 import (
 	"fmt"
-	"go-todo/router"
 	"log"
-	"net/http"
+	"os"
 )
 
 func main() {
 
-	r := router.Router()
+	// r := router.Router()
 
-	fmt.Println("Starting server on the port 8080...")
+	fmt.Printf("Starting server on the port %s...\n", "PORT")
 
-	log.Fatal(http.ListenAndServe(":8080", r))
+	if val, exist := os.LookupEnv("PORT"); exist {
+		log.Fatal(val)
+	} else {
+		log.Fatal(":3001")
+	}
+
+	// log.Fatal(http.ListenAndServe("PORT", r))
 }
