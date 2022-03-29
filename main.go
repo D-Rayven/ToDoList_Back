@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"go-todo/router"
 	"log"
+	"net/http"
 	"os"
 )
 
@@ -10,7 +12,7 @@ func main() {
 
 	os.Setenv("PORT", "8080")
 
-	// r := router.Router()
+	r := router.Router()
 
 	fmt.Printf("Starting server on the port %s...\n", os.Getenv("PORT"))
 
@@ -20,6 +22,6 @@ func main() {
 		log.Fatal(":3001")
 	}
 
-	// log.Fatal(http.ListenAndServe("PORT", r))
+	log.Fatal(http.ListenAndServe("PORT", r))
 
 }
