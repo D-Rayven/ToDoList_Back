@@ -5,7 +5,7 @@ import (
 	"go-todo/middleware"
 )
 
-var URL = "https://todolist-backend79.herokuapp.com:8080"
+var URL = "https://todolist-backend79.herokuapp.com"
 
 // Router is exported and used in main.go
 func Router() *mux.Router {
