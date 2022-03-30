@@ -17,11 +17,9 @@ func main() {
 	fmt.Printf("Starting server on the port %s...\n", os.Getenv("PORT"))
 
 	if val, exist := os.LookupEnv("PORT"); exist {
-		log.Fatal(val)
+		log.Fatal(http.ListenAndServe(":"+val, r))
 	} else {
-		log.Fatal(":3001")
+		log.Fatal(http.ListenAndServe(":3001", r))
 	}
-
-	log.Fatal(http.ListenAndServe("PORT", r))
 
 }
